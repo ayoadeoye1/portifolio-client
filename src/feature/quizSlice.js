@@ -19,13 +19,16 @@ const quizSlice = createSlice({
         zeroScore: (state) =>{
             state.score +=0
         },
-        isLogged: (state) => {
-            // state.loggedIn
-        }
+        isLog: (state) => {
+            state.loggedIn = true
+        },
+        notLog: (state) => {
+            state.loggedIn = false
+        },
         
     }
 })
 
-export const { submitUser, addScore, zeroScore } = quizSlice.actions;
+export const { submitUser, addScore, zeroScore, isLog, notLog } = quizSlice.actions;
 
 export default quizSlice.reducer

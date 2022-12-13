@@ -1,10 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Timeupredir = () => {
-
-    const navigate = useNavigate()
 
     const score = useSelector((state) => state.quiz.score)
     const perct = score/40*100

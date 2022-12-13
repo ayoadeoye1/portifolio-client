@@ -16,6 +16,8 @@ const CompDash = () => {
                 <h2><b>#gmailuser</b></h2>
             </div>
           <br /><hr />
+          <button className='h-30 max-w-fit py-4 px-2 border-4 shadow-xl'><a href='https://github.com/ayoadeoye1?tab=repositories'>AADY projects (github repositories)</a></button>
+          <br /><hr />
           <Profile />
           <br /><hr />
           <Skills />

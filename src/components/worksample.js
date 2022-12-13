@@ -10,7 +10,7 @@ const Worksample = () => {
         </div>
         <div className='flex flex-row'>
             <p className='m-4 w-3/5 font-thin font-serif text-lg'>file upload with nodejs, expressjs, cloudinary, mongoDB and reactjs</p>
-            <a className='m-4 text-sky-600 ' href='#' ><i>check</i></a>
+            <a className='m-4 text-sky-600 ' href='http://54.152.210.236:8000/' ><i>check</i></a>
         </div>
         <p className='m-6'>signup to view all...</p>
     </div>

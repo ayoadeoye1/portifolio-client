@@ -3,7 +3,7 @@ import pic from '../assets/aady1.jpg';
 import menu1 from '../assets/menu.png';
 import menu2 from '../assets/close.png';
 import { Link } from 'react-router-dom';
-import { useSelector, useDisaptch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Nav = () => {
 
@@ -31,7 +31,7 @@ const Nav = () => {
             {
               isLogged ? 
               <>
-                <a className='p-3'>logout</a>
+                <button className='p-3'>logout</button>
                 <Link to='dashboard/components' className='p-3'>components</Link>
                 <Link to='dashboard/test' className='p-3'>Quiz App</Link>
                 <Link to='dashboard/about' className='p-3'>about</Link>
@@ -45,18 +45,18 @@ const Nav = () => {
             }
         </div>
         <div className='sm:hidden shadow-lg absolute top-10 right-8'>
-          <img onClick={() => Don()} src={ resp ? menu2 : menu1 } className='font-bold' />
+          <img alt='menu' onClick={() => Don()} src={ resp ? menu2 : menu1 } className='font-bold' />
         </div>
         {
           resp 
           &&
           <div className='fixed top-0 right-0 left-0 bottom-0 rounded-xl  pt-5 opacity-80 bg-slate-900'>
-            <div  className='sm:hidden shadow-lg absolute top-10 right-8'><img onClick={() => Don()} src={menu2} className='font-bold' /></div>
+            <div  className='sm:hidden shadow-lg absolute top-10 right-8'><img alt='menu' onClick={() => Don()} src={menu2} className='font-bold' /></div>
             <div className='m-4 flex flex-col text-center text-2xl font-sans text-white '>
               {
                 isLogged ? 
                 <>
-                  <a onClick={() => Don()} className='p-3'>logout</a>
+                  <button onClick={() => Don()} className='p-3'>logout</button>
                   <Link onClick={() => Don()} to='dashboard/components' className='p-3'>components</Link>
                   <Link onClick={() => Don()} to='dashboard/test' className='p-3'>Quiz App</Link>
                   <Link onClick={() => Don()} to='dashboard/about' className='p-3'>about</Link>

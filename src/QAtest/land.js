@@ -3,7 +3,6 @@ import axios from 'axios'
 import Pagination from './pagination';
 import { useNavigate } from 'react-router-dom';
 import spinner from '../assets/spinner.gif'
-import { useSelector } from 'react-redux';
 
 const Land = () => {
     const [question, setQuestion] = useState([]);
@@ -174,8 +173,6 @@ const Land = () => {
     const GoBack = () =>{
         navigate('/dashboard')
     }
-
-    const up = useSelector((state) => state.quiz.time)
 
   return (
     <div className='top-0 left-0 right-0  w-full fixed bg-slate-300  mr-4 mb-4 overflow-scroll rounded-2xl h-full shadow-md'>

@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './index.css';
 // import axios from 'axios';
 import { Routes, Route, Navigate, Outlet, useNavigate } from 'react-router-dom';
-// import Cookie from 'js-cookie';
-// import CountDown from './QAtest/countDown';
+import Cookie from 'js-cookie';
 
 import Sign from "./components/sign";
 import Dashboard from './components/dashboard';
@@ -14,17 +13,20 @@ import Timeupredir from './QAtest/timeupredir';
 import Signin from './components/signin';
 import CompDash from './components/compDash';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { isLog, notLog } from './feature/quizSlice'
+
 import About from './components/about';
-// import Main from './QAtest/main';
 
 function App() {
   
   const isLogged= useSelector((state)=> state.quiz.loggedIn)
 
-  // Cookie.get('id') ? setIsLogged(true) : setIsLogged(false) TODO dispatch
+  const dispatch = useDispatch()
+
+  Cookie.get('id') ? dispatch({type: isLog}) : dispatch({type: notLog}) //TODO dispatch
  
-  // console.error('cookie:', Cookie.get('id'))
+  console.error('cookie:', Cookie.get('id'));
 
   const navigate = useNavigate()
 
@@ -33,6 +35,7 @@ function App() {
     navigate('/dashboard')
     :
     navigate('/sign')
+  // eslint-disable-next-line
   }, [])
     
   return (
@@ -41,12 +44,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to = '/sign' />} />
         
-        {/* {
-          isLogged && <Route path='/sign' element={<Navigate to = '/dashboard' />} />
-        } 
-        {
-          !isLogged && <Route path='/dashboard' element={<Navigate to = '/sign' />} />
-        } */}
         <Route path='/dashboard' element={<Navigate to = '/dashboard/components' />} />
         <Route path='/sign' element={<Navigate to = '/sign/components' />} />
         
